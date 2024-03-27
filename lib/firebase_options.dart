@@ -20,12 +20,6 @@ class DefaultFirebaseOptions {
       return web;
     }
     switch (defaultTargetPlatform) {
-      case TargetPlatform.android:
-        return android;
-      case TargetPlatform.iOS:
-        return ios;
-      case TargetPlatform.macOS:
-        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -51,31 +45,5 @@ class DefaultFirebaseOptions {
     authDomain: 'advancedbakery-23756.firebaseapp.com',
     storageBucket: 'advancedbakery-23756.appspot.com',
     measurementId: 'G-989HCCW93V',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB7JbRisO1_ytFkmDwiPMaCQoyQka5dKJ8',
-    appId: '1:458951441495:android:2174e5f8cb3c8b1bfb7712',
-    messagingSenderId: '458951441495',
-    projectId: 'advancedbakery-23756',
-    storageBucket: 'advancedbakery-23756.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB_sbEYs03Jif2_GfSEPvumoU41hXWpGgU',
-    appId: '1:458951441495:ios:b013a05695590a57fb7712',
-    messagingSenderId: '458951441495',
-    projectId: 'advancedbakery-23756',
-    storageBucket: 'advancedbakery-23756.appspot.com',
-    iosBundleId: 'com.example.advancedBakery',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyB_sbEYs03Jif2_GfSEPvumoU41hXWpGgU',
-    appId: '1:458951441495:ios:65003af74d964f17fb7712',
-    messagingSenderId: '458951441495',
-    projectId: 'advancedbakery-23756',
-    storageBucket: 'advancedbakery-23756.appspot.com',
-    iosBundleId: 'com.example.advancedBakery.RunnerTests',
   );
 }
