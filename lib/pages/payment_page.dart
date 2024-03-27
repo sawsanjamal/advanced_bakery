@@ -24,7 +24,10 @@ class _PaymentPageState extends State<PaymentPage> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text("Confirm payment"),
+          title: const Text(
+            "Confirm payment",
+          ),
+          backgroundColor: Color.fromARGB(255, 246, 188, 207),
           content: SingleChildScrollView(
             child: ListBody(
               children: [
@@ -38,7 +41,10 @@ class _PaymentPageState extends State<PaymentPage> {
           actions: [
             TextButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text("Cancel")),
+                child: const Text(
+                  "Cancel",
+                  style: TextStyle(color: Colors.black),
+                )),
             TextButton(
                 onPressed: () {
                   Navigator.pop(context);
@@ -48,7 +54,8 @@ class _PaymentPageState extends State<PaymentPage> {
                         builder: (context) => const DeliveryProgressPage(),
                       ));
                 },
-                child: const Text("Yes")),
+                child:
+                    const Text("Yes", style: TextStyle(color: Colors.black))),
           ],
         ),
       );
