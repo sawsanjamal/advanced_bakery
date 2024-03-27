@@ -1,6 +1,9 @@
+import 'package:advanced_bakery/model/bakery.dart';
 import 'package:advanced_bakery/pages/cart_page.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:provider/provider.dart';
 
 class MySliverAppBar extends StatelessWidget {
   final Widget child;
@@ -26,10 +29,15 @@ class MySliverAppBar extends StatelessWidget {
             },
             icon: badges.Badge(
               position: badges.BadgePosition.topEnd(top: -18, end: -7),
-              badgeContent: const Text(
-                "3",
-                style: TextStyle(fontSize: 12),
-              ),
+              badgeContent: Consumer<Bakery>(builder: (context, bakery, child) {
+                final userCart = bakery.cart;
+                int totalItems = 0;
+                userCart.forEachIndexed(
+                    (index, element) => totalItems += element.quantity);
+
+                return (Text(totalItems.toString(),
+                    style: const TextStyle(fontSize: 12)));
+              }),
               badgeStyle: badges.BadgeStyle(
                 badgeColor: Theme.of(context).colorScheme.tertiary,
               ),
@@ -39,7 +47,7 @@ class MySliverAppBar extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       foregroundColor: Theme.of(context).colorScheme.inversePrimary,
       title: const Text(
-        "Desserts",
+        "Baked With Love Bakery",
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       flexibleSpace: FlexibleSpaceBar(
