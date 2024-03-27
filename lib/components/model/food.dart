@@ -16,11 +16,11 @@ class Food {
 }
 
 enum FoodCategory {
-  cakes,
-  cookies,
-  cupcakes,
-  muffins,
-  macaroons,
+  Cakes,
+  Cookies,
+  Cupcakes,
+  Muffins,
+  Macaroons,
 }
 
 class Addon {
