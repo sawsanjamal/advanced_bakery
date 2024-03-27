@@ -1,5 +1,6 @@
 import 'package:advanced_bakery/pages/cart_page.dart';
 import 'package:flutter/material.dart';
+import 'package:badges/badges.dart' as badges;
 
 class MySliverAppBar extends StatelessWidget {
   final Widget child;
@@ -23,12 +24,22 @@ class MySliverAppBar extends StatelessWidget {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const CartPage()));
             },
-            icon: const Icon(Icons.shopping_cart))
+            icon: badges.Badge(
+              position: badges.BadgePosition.topEnd(top: -18, end: -7),
+              badgeContent: const Text(
+                "3",
+                style: TextStyle(fontSize: 12),
+              ),
+              badgeStyle: badges.BadgeStyle(
+                badgeColor: Theme.of(context).colorScheme.tertiary,
+              ),
+              child: const Icon(Icons.shopping_cart),
+            )),
       ],
       backgroundColor: Theme.of(context).colorScheme.background,
       foregroundColor: Theme.of(context).colorScheme.inversePrimary,
       title: const Text(
-        "Mouth-watering Desserts",
+        "Desserts",
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       flexibleSpace: FlexibleSpaceBar(

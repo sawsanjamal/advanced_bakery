@@ -1,5 +1,5 @@
-import 'package:advanced_bakery/components/model/bakery.dart';
-import 'package:advanced_bakery/components/model/cart_item.dart';
+import 'package:advanced_bakery/model/bakery.dart';
+import 'package:advanced_bakery/model/cart_item.dart';
 import 'package:advanced_bakery/components/quantity_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

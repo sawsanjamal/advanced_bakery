@@ -1,4 +1,4 @@
-import 'package:advanced_bakery/components/model/food.dart';
+import 'package:advanced_bakery/model/food.dart';
 import 'package:flutter/material.dart';
 
 class CustomTabBar extends StatelessWidget {
@@ -19,10 +19,9 @@ class CustomTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: TabBar(
+    return TabBar(
       controller: tabController,
       tabs: _buildCategoryTabs(),
-    ));
+    );
   }
 }

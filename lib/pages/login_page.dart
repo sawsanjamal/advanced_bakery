@@ -1,6 +1,7 @@
 import 'package:advanced_bakery/components/custom_button.dart';
 import 'package:advanced_bakery/components/custom_textfield.dart';
-import 'package:advanced_bakery/pages/home_page.dart';
+
+import 'package:advanced_bakery/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -16,12 +17,16 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  void login() {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const HomePage(),
-        ));
+  void login() async {
+    final authService = AuthService();
+    try {
+      await authService.signInWithEmailPassword(
+          emailController.text, passwordController.text);
+    } catch (e) {
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(title: Text(e.toString())));
+    }
   }
 
   @override

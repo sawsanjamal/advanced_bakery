@@ -1,4 +1,4 @@
-import 'package:advanced_bakery/components/model/food.dart';
+import 'package:advanced_bakery/model/food.dart';
 
 class CartItem {
   Food food;

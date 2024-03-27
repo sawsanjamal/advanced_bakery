@@ -1,4 +1,4 @@
-import 'package:advanced_bakery/components/model/food.dart';
+import 'package:advanced_bakery/model/food.dart';
 import 'package:flutter/material.dart';
 
 class BakedGoods extends StatelessWidget {
@@ -26,7 +26,7 @@ class BakedGoods extends StatelessWidget {
                   children: [
                     Text(
                       food.name,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     Text('\$' + food.price.toString(),
                         style: TextStyle(

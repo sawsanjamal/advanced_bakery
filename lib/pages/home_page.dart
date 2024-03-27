@@ -1,6 +1,6 @@
 import 'package:advanced_bakery/components/description_box.dart';
-import 'package:advanced_bakery/components/model/bakery.dart';
-import 'package:advanced_bakery/components/model/food.dart';
+import 'package:advanced_bakery/model/bakery.dart';
+import 'package:advanced_bakery/model/food.dart';
 import 'package:advanced_bakery/components/my_baked_goods_tile.dart';
 import 'package:advanced_bakery/components/my_drawer.dart';
 import 'package:advanced_bakery/components/my_location.dart';
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage>
                   Divider(
                     indent: 25,
                     endIndent: 25,
-                    color: Theme.of(context).colorScheme.inversePrimary,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   const MyLocation(),
                   const DescriptionBox(),

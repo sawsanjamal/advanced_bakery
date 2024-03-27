@@ -1,6 +1,6 @@
 import 'package:advanced_bakery/components/cart_tile.dart';
 import 'package:advanced_bakery/components/custom_button.dart';
-import 'package:advanced_bakery/components/model/bakery.dart';
+import 'package:advanced_bakery/model/bakery.dart';
 import 'package:advanced_bakery/pages/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -66,7 +66,7 @@ class CartPage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PaymentPage(),
+                            builder: (context) => const PaymentPage(),
                           ));
                     },
                     text: "Go to checkout"),

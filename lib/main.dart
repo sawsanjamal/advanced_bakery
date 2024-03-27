@@ -1,10 +1,15 @@
-import 'package:advanced_bakery/auth/login_or_register.dart';
-import 'package:advanced_bakery/components/model/bakery.dart';
+import 'package:advanced_bakery/services/auth/auth_gate.dart';
+
+import 'package:advanced_bakery/model/bakery.dart';
+import 'package:advanced_bakery/firebase_options.dart';
 import 'package:advanced_bakery/themes/theme_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
     MultiProvider(providers: [
       ChangeNotifierProvider(create: (context) => ThemeProvider()),
@@ -20,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const LoginOrRegister(),
+      home: const AuthGate(),
       theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }

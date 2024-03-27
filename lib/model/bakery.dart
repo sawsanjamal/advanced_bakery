@@ -1,5 +1,5 @@
-import 'package:advanced_bakery/components/model/cart_item.dart';
-import 'package:advanced_bakery/components/model/food.dart';
+import 'package:advanced_bakery/model/cart_item.dart';
+import 'package:advanced_bakery/model/food.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -177,6 +177,9 @@ class Bakery extends ChangeNotifier {
   List<CartItem> get cart => _cart;
 
   final List<CartItem> _cart = [];
+
+  String _deliveryAddress = '99 Hollywood Blvd';
+  String get deliveryAddress => _deliveryAddress;
   void addToCart(Food food, List<Addon> selectedAddons) {
     CartItem? cartItem = _cart.firstWhereOrNull((item) {
       bool isSameFood = item.food == food;
@@ -230,6 +233,11 @@ class Bakery extends ChangeNotifier {
     notifyListeners();
   }
 
+  void updateDeliveryAddress(String newAddress) {
+    _deliveryAddress = newAddress;
+    notifyListeners();
+  }
+
   String displayCartReceipt() {
     final receipt = StringBuffer();
     receipt.writeln("Here's your receipt.");
@@ -253,6 +261,8 @@ class Bakery extends ChangeNotifier {
     receipt.writeln();
     receipt.writeln("Total Items: ${getTotalItemCount()}");
     receipt.writeln("Total Price: ${_formatPrice(getTotalPrice())}");
+    receipt.writeln();
+    receipt.writeln("Delivering to: $deliveryAddress");
     return receipt.toString();
   }
 

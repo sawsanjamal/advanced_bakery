@@ -1,9 +1,14 @@
 import 'package:advanced_bakery/components/drawer_tile.dart';
 import 'package:advanced_bakery/pages/settings_page.dart';
+import 'package:advanced_bakery/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
+  void logout() {
+    final authService = AuthService();
+    authService.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +44,7 @@ class MyDrawer extends StatelessWidget {
                     ));
               }),
           const Spacer(),
-          DrawerTile(text: "Logout", icon: Icons.logout, onTap: () {}),
+          DrawerTile(text: "Logout", icon: Icons.logout, onTap: logout),
           const SizedBox(
             height: 25,
           )

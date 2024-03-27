@@ -1,8 +1,7 @@
 import 'package:advanced_bakery/components/custom_button.dart';
-import 'package:advanced_bakery/components/model/bakery.dart';
-import 'package:advanced_bakery/components/model/food.dart';
+import 'package:advanced_bakery/model/bakery.dart';
+import 'package:advanced_bakery/model/food.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 class FoodPage extends StatefulWidget {

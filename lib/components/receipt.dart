@@ -1,4 +1,4 @@
-import 'package:advanced_bakery/components/model/bakery.dart';
+import 'package:advanced_bakery/model/bakery.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -24,7 +24,8 @@ class Receipt extends StatelessWidget {
               child: Consumer<Bakery>(
                   builder: (context, bakery, child) =>
                       Text(bakery.displayCartReceipt())),
-            )
+            ),
+            const SizedBox(height: 25),
           ],
         ),
       ),
