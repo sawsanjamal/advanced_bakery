@@ -1,6 +1,18 @@
 # advanced_bakery
+User authentication - create a new account / login/ logout features 
 
-A new Flutter project.
+Browse Menu - based on categories
+
+Food Addons - some items have special options the user can choose to add
+
+Cart - add / remove / increase & decrease quantity / go to checkout
+
+Total Calculation / Receipt Generator - automatically calculates everything in the cart and creates a receipt for the user as a summary.
+
+Input Card Payment Details
+
+Place order into the Firebase 
+
 
 ## Getting Started
 
